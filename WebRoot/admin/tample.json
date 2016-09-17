@@ -1,0 +1,9 @@
+{                                                      
+	"total":2,                                                      
+	"rows":[                                                          
+		{"type":"教师或学生导入模板", 
+		"name":"teacherOrStudent.xls"
+		},
+		{"type":"课程导入模板","name":"course.xls"}  
+	]                                                          
+}                                                           

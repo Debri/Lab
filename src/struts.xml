@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 指定struts编码为utf-8 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!-- 指定文件上传的大小 2gb-->
+	<constant name="struts.multipart.maxSize" value="2147483648" />
+	<!-- 指定文件上传是的临时文件保存地址 -->
+	<constant name="struts.multipart.saveDir" value="E:\\lab\\tem"></constant>
+	
+	<!-- 自定义全局拦截器，需要用到字符、异常的功能 -->
+	<package name="labStruts-default" extends="struts-default">
+		<interceptors>
+			<interceptor name="encodingInterceptor"	class="lab.interceptor.EncodingInterceptor"></interceptor>
+			<interceptor-stack name="labInterceptorStack">
+				<interceptor-ref name="encodingInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="labInterceptorStack"></default-interceptor-ref>
+		
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+	</package>
+	
+	<package name="lab" namespace="/" extends="labStruts-default">
+		<!-- 第一个*代表Action，第二个*代表方法 -->
+		<action name="*_*" class="lab.action.{1}Action" method="{2}"></action>
+	</package>
+	<package name="admin" namespace="/admin" extends="labStruts-default">
+		<action name="*_*" class="lab.admin.action.{1}Action" method="{2}"></action>
+	</package>
+	<package name="student" namespace="/student" extends="labStruts-default">
+		<action name="*_*" class="lab.student.action.{1}Action" method="{2}"></action>
+	</package>
+	<package name="teacher" namespace="/teacher" extends="labStruts-default">
+		<action name="*_*" class="lab.teacher.action.{1}Action" method="{2}"></action>
+	</package>
+	<!-- 文件下载 -->
+	<package name="download" namespace="/download" extends="labStruts-default">
+		<action name="*_*" class="lab.action.{1}Action" method="{2}">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>    
+        		<param name="inputName">inputStream</param>       
+         		<param name="contentDisposition">attachment;filename="${fileName}"</param>       
+         		<param name="bufferSize">4096</param>
+			</result>
+			<result name="input">/error.jsp</result>
+		</action>
+	</package>
+</struts>

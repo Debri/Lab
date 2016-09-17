@@ -1,0 +1,248 @@
+//chenjiajun
+//2014/09/02
+  
+//reset.css
+*{
+	padding: 0;
+	margin: 0;
+	border:0;
+	box-sizing: border-box;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+//set all page
+body{
+	font-size: 14px;
+	font-family: "微软雅黑","宋体","黑体";
+	background: url(../images/background.jpg);
+}
+html{
+	//overflow: hidden;
+}
+//var 
+@minWidth : 1024px;
+
+//header
+.header{
+	width: 100%;
+	height: 50px;
+	background-color: #555251;
+	border: 1px solid #474645;
+	color:#fff;
+	padding: 0 0 0 20px;
+	min-width: @minWidth;
+	.top-left{
+		float: left;
+		width:342px;
+		h1{
+		font-size: 24px;
+		background: url(../images/icons.png) 0 -110px no-repeat;
+		padding-left: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-top: 2px;
+		width:342px;
+			.small{
+				font-size: 20px;
+				margin-left: 10px;
+			}//small end
+		}//h1 end
+	}//top-left end
+
+	.top-right{
+		float: right;
+		li{
+			float: left;			
+			a{
+				display: block;
+				height: 48px;
+				line-height: 45px;
+				font-size: 18px;
+				text-align: center;
+				border-left: 1px solid #484544;
+				cursor: pointer;
+				min-width: 70px;
+				color:#fff;
+				&:hover{
+				background-color:#484544;
+				color:orange;
+			}
+			}
+			.active{
+				background-color:#484544;
+				color:orange;
+			}
+		}
+	}//top-right end
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	margin-bottom: 15px;
+}//header end
+
+//pages
+.showPage{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	.pages{
+	background-color: #fff;
+	}//pages end
+
+	.page{
+		overflow: hidden;
+	}//page end
+
+	border:1px solid #ccc;
+	box-shadow: 0 0 3px 3px #ddd;
+	.siderContent{
+		width: 230px;
+		background: url(../images/siderbg.jpg);
+		opacity: 0.8;
+		float: left;
+		height: 100%;
+		border:1px solid #fff;
+		padding: 20px;
+		h2{
+			color:#002776;
+			text-align: center;
+			.current{
+				font-size: 28px;
+			}// current end
+		}//h2 end
+		ol{
+			width:100%;
+			margin-left:10px;
+			margin-top: 15px;
+			li{
+				width: 100%;
+				font-size: 12px;
+				color: #335291;
+				line-height: 2em;
+				list-style: decimal;
+			}
+			}//ol end
+		.pagetext{
+			width: 100%;
+		}
+	}//siderContent end
+
+	.imageItem{
+		padding: 30px 0;
+		width:100%;
+		margin-left:-230px;
+		padding-left: 230px;
+		float: left;
+		height: 100%;
+		img{
+			max-width: 95%;
+			width: 95%;
+			max-height: 95%;
+			display: block;
+			margin: 0 auto;
+		}
+		padding-bottom: 30px;
+		overflow: hidden;
+	}//imageItem end
+
+	
+}// showPage end
+.main{
+	width: 100%;
+	min-width: @minWidth;
+}
+.mmain{
+ 	 position: relative;
+	 width: 80%;
+	 margin-left:12%;
+	 min-width: @minWidth * 0.8;
+ 	.toggleButton{
+		width: 43px;
+		position: absolute;
+		top:50%;
+		z-index:1111;
+		right:-73px;
+		margin-top: -70px;
+		.toggle{
+			cursor: pointer;
+			width: 40px;
+			height: 40px;
+		}
+
+		.prev{
+			background: url(../images/icons.png) 0 -152px no-repeat;
+		}
+		.prev:hover{
+			background: url(../images/icons.png) 0 -232px no-repeat;
+		}
+
+		.next{
+			margin-top: 30px;
+			background: url(../images/icons.png) 0 -192px no-repeat;
+		}
+
+		.next:hover{
+			background: url(../images/icons.png) 0 -273px no-repeat;
+		}
+	}//toggleButton end
+	@endHeight:30px;
+	@minLiHeight:25px;
+	.pagesmenu{
+		position: absolute;
+		width: 120px;
+		top: 30px;
+		left:-120px;
+		li{
+			cursor: pointer;
+			color:#335291;
+			font-weight: 700;
+			min-height: @minLiHeight;
+			padding-left: 10px;
+			&:hover{
+				color: orange;
+			}
+			line-height: 1.5em;
+			border-left:1px solid #ccc;
+			span{
+				width: 10px;
+				height: 10px;
+				display: inline-block;
+				position: absolute;
+				
+			}
+			
+			.stepNav{
+				background: url(../images/icons.png) 0 -380px no-repeat;
+				left: -3px;
+				margin-top:(@minLiHeight - 10) /2 ;
+			}
+		}
+		.ends{
+				span{
+					background: url(../images/icons.png) 0 -317px no-repeat;
+					left: -5px;
+				}
+				height: @endHeight;
+				.endsBottom{
+					margin-top: @endHeight - 10;
+				}
+			}
+		.activeNav{
+			color: orange;
+			span{
+				background: url(../images/icons.png) -100px -320px no-repeat;
+				width:20px;
+				height:15px;
+				left:-5px;
+				margin-top:5px;
+			}
+		}
+	}//pagesmenu end
+}
+

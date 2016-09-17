@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-size: 14px;
+  font-family: "微软雅黑", "宋体", "黑体";
+  background: url(../images/background.jpg);
+}
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: #555251;
+  border: 1px solid #474645;
+  color: #fff;
+  padding: 0 0 0 20px;
+  min-width: 1024px;
+  margin-bottom: 15px;
+}
+.header .top-left {
+  float: left;
+  width: 342px;
+}
+.header .top-left h1 {
+  font-size: 24px;
+  background: url(../images/icons.png) 0 -110px no-repeat;
+  padding-left: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 2px;
+  width: 342px;
+}
+.header .top-left h1 .small {
+  font-size: 20px;
+  margin-left: 10px;
+}
+.header .top-right {
+  float: right;
+}
+.header .top-right li {
+  float: left;
+}
+.header .top-right li a {
+  display: block;
+  height: 48px;
+  line-height: 45px;
+  font-size: 18px;
+  text-align: center;
+  border-left: 1px solid #484544;
+  cursor: pointer;
+  min-width: 70px;
+  color: #fff;
+}
+.header .top-right li a:hover {
+  background-color: #484544;
+  color: orange;
+}
+.header .top-right li .active {
+  background-color: #484544;
+  color: orange;
+}
+.header:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.showPage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 3px 3px #ddd;
+}
+.showPage .pages {
+  background-color: #fff;
+}
+.showPage .page {
+  overflow: hidden;
+}
+.showPage .siderContent {
+  width: 230px;
+  background: url(../images/siderbg.jpg);
+  opacity: 0.8;
+  float: left;
+  height: 100%;
+  border: 1px solid #fff;
+  padding: 20px;
+}
+.showPage .siderContent h2 {
+  color: #002776;
+  text-align: center;
+}
+.showPage .siderContent h2 .current {
+  font-size: 28px;
+}
+.showPage .siderContent ol {
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.showPage .siderContent ol li {
+  width: 100%;
+  font-size: 12px;
+  color: #335291;
+  line-height: 2em;
+  list-style: decimal;
+}
+.showPage .siderContent .pagetext {
+  width: 100%;
+}
+.showPage .imageItem {
+  padding: 30px 0;
+  width: 100%;
+  margin-left: -230px;
+  padding-left: 230px;
+  float: left;
+  height: 100%;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+.showPage .imageItem img {
+  max-width: 95%;
+  width: 95%;
+  max-height: 95%;
+  display: block;
+  margin: 0 auto;
+}
+.main {
+  width: 100%;
+  min-width: 1024px;
+}
+.mmain {
+  position: relative;
+  width: 80%;
+  margin-left: 12%;
+  min-width: 819.2px;
+}
+.mmain .toggleButton {
+  width: 43px;
+  position: absolute;
+  top: 50%;
+  z-index: 1111;
+  right: -73px;
+  margin-top: -70px;
+}
+.mmain .toggleButton .toggle {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.mmain .toggleButton .prev {
+  background: url(../images/icons.png) 0 -152px no-repeat;
+}
+.mmain .toggleButton .prev:hover {
+  background: url(../images/icons.png) 0 -232px no-repeat;
+}
+.mmain .toggleButton .next {
+  margin-top: 30px;
+  background: url(../images/icons.png) 0 -192px no-repeat;
+}
+.mmain .toggleButton .next:hover {
+  background: url(../images/icons.png) 0 -273px no-repeat;
+}
+.mmain .pagesmenu {
+  position: absolute;
+  width: 120px;
+  top: 30px;
+  left: -120px;
+}
+.mmain .pagesmenu li {
+  cursor: pointer;
+  color: #335291;
+  font-weight: 700;
+  min-height: 25px;
+  padding-left: 10px;
+  line-height: 1.5em;
+  border-left: 1px solid #ccc;
+}
+.mmain .pagesmenu li:hover {
+  color: orange;
+}
+.mmain .pagesmenu li span {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+}
+.mmain .pagesmenu li .stepNav {
+  background: url(../images/icons.png) 0 -380px no-repeat;
+  left: -3px;
+  margin-top: 7.5px;
+}
+.mmain .pagesmenu .ends {
+  height: 30px;
+}
+.mmain .pagesmenu .ends span {
+  background: url(../images/icons.png) 0 -317px no-repeat;
+  left: -5px;
+}
+.mmain .pagesmenu .ends .endsBottom {
+  margin-top: 20px;
+}
+.mmain .pagesmenu .activeNav {
+  color: orange;
+}
+.mmain .pagesmenu .activeNav span {
+  background: url(../images/icons.png) -100px -320px no-repeat;
+  width: 20px;
+  height: 15px;
+  left: -5px;
+  margin-top: 5px;
+}
